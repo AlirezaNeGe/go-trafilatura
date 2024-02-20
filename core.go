@@ -29,10 +29,10 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"github.com/go-shiori/dom"
 	"github.com/AlirezaNeGe/go-trafilatura/internal/etree"
 	"github.com/AlirezaNeGe/go-trafilatura/internal/lru"
 	"github.com/AlirezaNeGe/go-trafilatura/internal/selector"
+	"github.com/go-shiori/dom"
 	"golang.org/x/net/html"
 )
 
@@ -86,7 +86,6 @@ func ExtractDocument(doc *html.Node, opts Options) (*ExtractResult, error) {
 	// Clone and backup document to make sure the original kept untouched
 	doc = dom.Clone(doc, true)
 	docBackup1 := dom.Clone(doc, true)
-	docBackup2 := dom.Clone(doc, true)
 
 	// Fetch metadata
 	metadata := extractMetadata(doc, opts)
@@ -143,12 +142,6 @@ func ExtractDocument(doc *html.Node, opts Options) (*ExtractResult, error) {
 		postBody, tmpBodyText = compareExtraction(docBackup1, postBody, opts)
 	}
 
-	// Rescue: try to use original/dirty tree
-	lenText := utf8.RuneCountInString(tmpBodyText)
-	if lenText < opts.Config.MinExtractedSize {
-		postBody, tmpBodyText = baseline(docBackup2)
-	}
-
 	// Tree size sanity check
 	if opts.MaxTreeSize > 0 {
 		if len(dom.Children(postBody)) > opts.MaxTreeSize {
@@ -165,11 +158,6 @@ func ExtractDocument(doc *html.Node, opts Options) (*ExtractResult, error) {
 	// Size checks
 	if lenComments < opts.Config.MinExtractedCommentSize {
 		logWarn(opts, "not enough comments: %s", opts.OriginalURL)
-	}
-
-	lenText = utf8.RuneCountInString(tmpBodyText)
-	if lenText < opts.Config.MinOutputSize && lenComments < opts.Config.MinOutputCommentSize {
-		return nil, fmt.Errorf("text and comments are not long enough: %d %d", lenText, lenComments)
 	}
 
 	// Check duplicates at body level

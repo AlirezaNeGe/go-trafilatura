@@ -1,4 +1,4 @@
-module github.com/markusmobius/go-trafilatura
+module github.com/AlirezaNeGe/go-trafilatura
 
 go 1.20
 

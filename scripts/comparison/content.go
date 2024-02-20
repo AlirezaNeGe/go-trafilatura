@@ -8,8 +8,8 @@ import (
 
 	"github.com/go-shiori/dom"
 	"github.com/go-shiori/go-readability"
-	distiller "github.com/markusmobius/go-domdistiller"
-	"github.com/markusmobius/go-trafilatura"
+	distiller "github.com/AlirezaNeGe/go-domdistiller"
+	"github.com/AlirezaNeGe/go-trafilatura"
 	"github.com/sirupsen/logrus"
 	"golang.org/x/net/html"
 )

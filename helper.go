@@ -4,7 +4,7 @@ import (
 	"strings"
 
 	"github.com/go-shiori/dom"
-	"github.com/markusmobius/go-trafilatura/internal/etree"
+	"github.com/AlirezaNeGe/go-trafilatura/internal/etree"
 	"golang.org/x/net/html"
 )
 

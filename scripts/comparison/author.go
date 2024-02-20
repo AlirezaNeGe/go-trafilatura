@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/markusmobius/go-trafilatura"
+	"github.com/AlirezaNeGe/go-trafilatura"
 	"github.com/sirupsen/logrus"
 )
 

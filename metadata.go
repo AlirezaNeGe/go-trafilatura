@@ -1,6 +1,6 @@
 // This file is part of go-trafilatura, Go package for extracting readable
 // content, comments and metadata from a web page. Source available in
-// <https://github.com/markusmobius/go-trafilatura>.
+// <https://github.com/AlirezaNeGe/go-trafilatura>.
 // Copyright (C) 2021 Markus Mobius
 //
 // This program is free software: you can redistribute it and/or modify
@@ -28,12 +28,12 @@ import (
 	"unicode"
 	"unicode/utf8"
 
+	"github.com/AlirezaNeGe/go-trafilatura/internal/etree"
+	"github.com/AlirezaNeGe/go-trafilatura/internal/regexp"
+	"github.com/AlirezaNeGe/go-trafilatura/internal/selector"
 	"github.com/forPelevin/gomoji"
 	"github.com/go-shiori/dom"
 	"github.com/markusmobius/go-htmldate"
-	"github.com/markusmobius/go-trafilatura/internal/etree"
-	"github.com/markusmobius/go-trafilatura/internal/regexp"
-	"github.com/markusmobius/go-trafilatura/internal/selector"
 	"golang.org/x/net/html"
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"

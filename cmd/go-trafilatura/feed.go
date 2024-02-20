@@ -1,6 +1,6 @@
 // This file is part of go-trafilatura, Go package for extracting readable
 // content, comments and metadata from a web page. Source available in
-// <https://github.com/markusmobius/go-trafilatura>.
+// <https://github.com/AlirezaNeGe/go-trafilatura>.
 // Copyright (C) 2021 Markus Mobius
 //
 // This program is free software: you can redistribute it and/or modify
@@ -31,7 +31,7 @@ import (
 	"time"
 
 	betree "github.com/beevik/etree"
-	"github.com/markusmobius/go-trafilatura"
+	"github.com/AlirezaNeGe/go-trafilatura"
 	gonanoid "github.com/matoous/go-nanoid/v2"
 
 	"github.com/go-shiori/dom"

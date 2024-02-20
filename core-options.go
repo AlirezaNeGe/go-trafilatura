@@ -54,8 +54,8 @@ func DefaultConfig() *Config {
 
 		MinExtractedSize:        250,
 		MinExtractedCommentSize: 1,
-		MinOutputSize:           1,
-		MinOutputCommentSize:    1,
+		MinOutputSize:           0,
+		MinOutputCommentSize:    0,
 	}
 }
 

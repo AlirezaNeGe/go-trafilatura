@@ -34,13 +34,13 @@ There are some difference between this port and the original Trafilatura:
 Run following command inside your Go project :
 
 ```
-go get -u -v github.com/markusmobius/go-trafilatura
+go get -u -v github.com/AlirezaNeGe/go-trafilatura
 ```
 
 Next, include it in your application :
 
 ```go
-import "github.com/markusmobius/go-trafilatura"
+import "github.com/AlirezaNeGe/go-trafilatura"
 ```
 
 Now you can use Trafilatura to extract content of a web page. For basic usage you can check the [example](examples/from-url.go).
@@ -50,7 +50,7 @@ Now you can use Trafilatura to extract content of a web page. For basic usage yo
 To use CLI, you need to build it from source. Make sure you use `go >= 1.16` then run following commands :
 
 ```
-go get -u -v github.com/markusmobius/go-trafilatura/cmd/go-trafilatura
+go install github.com/AlirezaNeGe/go-trafilatura/cmd/go-trafilatura@latest
 ```
 
 Once installed, you can use it from your terminal:

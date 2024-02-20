@@ -272,7 +272,7 @@ func linkDensityTest(element *html.Node, opts Options) ([]*html.Node, bool) {
 
 		// Check if links data surpass threshold
 		if float64(linkLength) > threshold*float64(textLength) ||
-			(nNonEmptyLinks > 1 && float64(nShortLinks)/float64(nNonEmptyLinks) > 0.8) {
+			(nNonEmptyLinks > 1 && float64(nShortLinks)/float64(nNonEmptyLinks) > threshold) {
 			return nonEmptyLinks, true
 		}
 	}
